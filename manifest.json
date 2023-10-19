@@ -1,0 +1,42 @@
+{
+  "name": "ColorSelect",
+  "version": "1.0.0",
+  "description": "This Extension will help you to pick up any color from the website",
+  "permissions": ["tabs","activeTab"],
+  "host_permissions": ["*://*/*"],
+  "author":"Surjeet",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/copy1.png",
+        "assets/bookmark.png",
+        "assets/delete.png",
+        "script.js",
+        "pop.css",
+        "assets/copy.png"
+      ],
+      "matches": ["*://*/*"]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "assets/ext-icon.png",
+      "24": "assets/ext-icon.png",
+      "32": "assets/ext-icon.png"
+    },
+    "default_title": "ColorSelect",
+    "default_popup": "popup.html",
+    "width":800,
+    "height":800
+  },
+  "manifest_version": 3
+}

@@ -1,0 +1,1 @@
+chrome.tabs.onUpdated.addListener(((e,s,d)=>{!d.url||"complete"!==s.status||d.url.includes("chrome://")||d.url.includes("edge://")||chrome.tabs.sendMessage(e,{type:"TAB_OPEN",value:d.url})}));
